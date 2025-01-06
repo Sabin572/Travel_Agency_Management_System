@@ -75,9 +75,9 @@ public class StartPage extends javax.swing.JFrame {
         jLabel2.setText("We Make Your Plan, a Trip");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 250, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/welcome-3347467_640.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/welcome-3347467_640.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 100, 580, 130));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 580, 130));
 
         jprogress1.setForeground(new java.awt.Color(255, 255, 0));
         getContentPane().add(jprogress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 400, 30));
@@ -93,7 +93,7 @@ public class StartPage extends javax.swing.JFrame {
         load.getAccessibleContext().setAccessibleName("load");
         load.getAccessibleContext().setAccessibleDescription("");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TREKKING_AND_HIKING.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/TREKKING_AND_HIKING.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 450));
 
         pack();
@@ -104,7 +104,7 @@ public class StartPage extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
+            java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 UserController userController = null;
                 new StartPage(userController).setVisible(true);

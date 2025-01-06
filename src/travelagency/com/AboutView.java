@@ -2,17 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package travelwithus.com;
-/**
- *
- * @author Sabin Adhikari
- */
-import controller.CustomerController;
+package travelagency.com;
 
+import controller.CustomerController;
+/*
+* @author Sabin Adhikari
+* LMU 23048604
+*/
 
 public class AboutView extends javax.swing.JFrame {
-    private String username;
-    private CustomerController customerController;
+    private final String username;
+    private final CustomerController customerController;
 
     /**
      * Creates new form DashboardView
@@ -73,7 +73,7 @@ public class AboutView extends javax.swing.JFrame {
             }
         });
 
-        aboutButton.setBackground(new java.awt.Color(0, 0, 0));
+        aboutButton.setBackground(new java.awt.Color(0, 115, 0));
         aboutButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         aboutButton.setForeground(new java.awt.Color(255, 255, 255));
         aboutButton.setText("About");
@@ -156,7 +156,7 @@ public class AboutView extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();

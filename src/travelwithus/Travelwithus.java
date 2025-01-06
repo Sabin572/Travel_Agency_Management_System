@@ -8,9 +8,9 @@ import controller.UserController;
 import travelwithus.com.StartPage;
 
 /**
- *
- * @author Sabin Adhika
- */
+* @author Sabin Adhikari
+* LMU 23048604
+*/
 public class Travelwithus {
 
     /**

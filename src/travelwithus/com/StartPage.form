@@ -66,13 +66,13 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/welcome-3347467_640.jpg"/>
+          <Image iconType="3" name="/resource/welcome-3347467_640.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-10" y="100" width="580" height="130"/>
+          <AbsoluteConstraints x="150" y="100" width="580" height="130"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -126,7 +126,7 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/TREKKING_AND_HIKING.jpg"/>
+          <Image iconType="3" name="/resource/TREKKING_AND_HIKING.jpg"/>
         </Property>
       </Properties>
       <Constraints>

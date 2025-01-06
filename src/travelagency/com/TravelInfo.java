@@ -2,39 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package travelwithus.com;
-/**
- *
- * @author Sabin Adhikari
- */
+package travelagency.com;
+
 import controller.CustomerController;
 import controller.UserController;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 import model.Customer;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.RowFilter;
-
-
+/*
+* @author Sabin Adhikari
+* LMU 23048604
+*/
 
 public class TravelInfo extends javax.swing.JFrame {
-private final String username;
-private final CustomerController customerController;
+private String username;
+private CustomerController customerController;
 
-    /**
-     * Creates new form DashboardView
-     * @param username
-     * @param customerController
-     */
-    public TravelInfo(String username, CustomerController customerController) {
-        this.username=username;
-        this.customerController = customerController;
-        initComponents();
-        greetingLabel.setText("Welcome, " + username + "!");
-    populateCustomerTable();
-
+    TravelInfo(String username, CustomerController customerController) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -66,12 +51,6 @@ private final CustomerController customerController;
         deleteCusBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         newCusLocation = new javax.swing.JTextField();
-        SelectionSort = new javax.swing.JButton();
-        InsertionSort = new javax.swing.JButton();
-        searchTextField = new javax.swing.JTextField();
-        SearchButton = new javax.swing.JButton();
-        MergeSort = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -127,15 +106,15 @@ private final CustomerController customerController;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(140, 140, 140)
                 .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(TravelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(aboutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,16 +125,13 @@ private final CustomerController customerController;
                     .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TravelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(aboutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
         greetingLabel.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
-        greetingLabel.setText("Manage Customers");
+        greetingLabel.setText("User Dashboard");
 
-        customersTable.setBackground(new java.awt.Color(255, 255, 153));
         customersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -164,7 +140,7 @@ private final CustomerController customerController;
                 {null, null, null, null, null}
             },
             new String [] {
-                "Customer ID", "Name", "Email", "Phone No.", "Preferred Location"
+                "Customer ID", "Name", "Email", "Phone No.", "Location"
             }
         ) {
             Class[] types = new Class [] {
@@ -233,89 +209,17 @@ private final CustomerController customerController;
             }
         });
 
-        SelectionSort.setBackground(new java.awt.Color(0, 102, 0));
-        SelectionSort.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        SelectionSort.setForeground(new java.awt.Color(255, 255, 255));
-        SelectionSort.setText("Sort By A-Z");
-        SelectionSort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SelectionSortActionPerformed(evt);
-            }
-        });
-
-        InsertionSort.setBackground(new java.awt.Color(0, 102, 0));
-        InsertionSort.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        InsertionSort.setForeground(new java.awt.Color(255, 255, 255));
-        InsertionSort.setText("Sort By ID");
-        InsertionSort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsertionSortActionPerformed(evt);
-            }
-        });
-
-        searchTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchTextFieldActionPerformed(evt);
-            }
-        });
-
-        SearchButton.setBackground(new java.awt.Color(153, 0, 0));
-        SearchButton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        SearchButton.setForeground(new java.awt.Color(255, 255, 255));
-        SearchButton.setText("Search");
-        SearchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButtonActionPerformed(evt);
-            }
-        });
-
-        MergeSort.setBackground(new java.awt.Color(0, 102, 0));
-        MergeSort.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        MergeSort.setForeground(new java.awt.Color(255, 255, 255));
-        MergeSort.setText("Sort By Location");
-        MergeSort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MergeSortActionPerformed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(102, 0, 102));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Clear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(greetingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SelectionSort, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(InsertionSort, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(MergeSort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -330,71 +234,59 @@ private final CustomerController customerController;
                                 .addComponent(newCusEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGap(18, 18, 18)
                             .addComponent(newCusLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(updateCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(deleteCusBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(122, 122, 122))
+                        .addComponent(updateCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(addCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deleteCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(92, 92, 92))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(greetingLabel)))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(greetingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(newCusName, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(newCusEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(greetingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SelectionSort, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(MergeSort, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(InsertionSort, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(searchTextField)
-                            .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                            .addComponent(newCusEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(newCusPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
+                        .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(newCusLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(newCusLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(updateCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(deleteCusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(updateCusBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(155, 155, 155))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(68, Short.MAX_VALUE))))
         );
 
         pack();
@@ -422,12 +314,13 @@ private final CustomerController customerController;
     String email = newCusEmail.getText().trim();
     String phone = newCusPhone.getText().trim();
     String location= newCusLocation.getText().trim();
-   
-       if (name.isEmpty() || email.isEmpty() || phone.isEmpty()||location.isEmpty()) {
+
+    
+        if (name.isEmpty() || email.isEmpty() || phone.isEmpty()||location.isEmpty()) {
         JOptionPane.showMessageDialog(this, "All fields are required!", "Error", JOptionPane.ERROR_MESSAGE);
-       return;
+        return;
     }
-    customerController.addCustomer(name, email, phone, location);
+    customerController.addCustomer(name, email, phone,location);
     populateCustomerTable();
     JOptionPane.showMessageDialog(this, "Customer added successfully!");
     newCusName.setText("");
@@ -440,10 +333,10 @@ private final CustomerController customerController;
     private void updateCusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCusBtnActionPerformed
         // TODO add your handling code here:
     int selectedRow = customersTable.getSelectedRow();
-      if (selectedRow == -1) {
+if (selectedRow == -1) {
         JOptionPane.showMessageDialog(this, "Select a customer to update!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
-      }
+    }
     int customerId = (int) customersTable.getValueAt(selectedRow, 0);
     String name = newCusName.getText().trim();
     String email = newCusEmail.getText().trim();
@@ -490,12 +383,12 @@ if (selectedRow == -1) {
     String selectedName = (String)customersTable.getValueAt(selectedRow, 1);
     String selectedEmail = (String)customersTable.getValueAt(selectedRow, 2);
     String selectedPhone = (String)customersTable.getValueAt(selectedRow, 3);
-    String selectedLocation= (String)customersTable.getValueAt(selectedRow,4);
+    String selectedLocation= (String)customersTable.getValueAt(selectedRow,4); 
 
     newCusName.setText(selectedName);
     newCusEmail.setText(selectedEmail);
     newCusPhone.setText(selectedPhone);
-    newCusLocation.setText(selectedLocation);
+    newCusLocation.setText(selectedLocation);     
 
     }//GEN-LAST:event_customersTableMouseClicked
 
@@ -509,166 +402,6 @@ if (selectedRow == -1) {
     private void newCusLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCusLocationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_newCusLocationActionPerformed
-
-    private void InsertionSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertionSortActionPerformed
-        // TODO add your handling code here:
-        // Get the table model
-    DefaultTableModel model = (DefaultTableModel) customersTable.getModel();
-
-    // Perform Insertion Sort on the model data by customer ID (column index 0)
-    for (int i = 1; i < model.getRowCount(); i++) {
-        // Extract the current row as a key
-        ArrayList<Object> keyRow = new ArrayList<>();
-        for (int col = 0; col < model.getColumnCount(); col++) {
-            keyRow.add(model.getValueAt(i, col));
-        }
-
-        // Extract the key value (customer ID) and parse it as an integer
-        int key = Integer.parseInt(keyRow.get(0).toString());
-        int j = i - 1;
-
-        // Compare and shift rows until the correct position is found
-        while (j >= 0 && Integer.parseInt(model.getValueAt(j, 0).toString()) < key) {
-            for (int col = 0; col < model.getColumnCount(); col++) {
-                model.setValueAt(model.getValueAt(j, col), j + 1, col);
-            }
-            j--;
-        }
-
-        // Insert the keyRow into its correct position
-        for (int col = 0; col < model.getColumnCount(); col++) {
-            model.setValueAt(keyRow.get(col), j + 1, col);
-        }
-    }
-        
-    }//GEN-LAST:event_InsertionSortActionPerformed
-
-    private void SelectionSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectionSortActionPerformed
-        // TODO add your handling code here:
-        // Get the table model
-    DefaultTableModel model = (DefaultTableModel) customersTable.getModel();
-
-    // Create a TableRowSorter and associate it with the table model
-    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
-    customersTable.setRowSorter(sorter);
-
-    // Sort based on the customer name column (index 1, assuming name is in the second column)
-    sorter.setComparator(1, String.CASE_INSENSITIVE_ORDER);
-
-    // Trigger sorting
-    sorter.toggleSortOrder(1); // Column index 1 for customer names
-    }//GEN-LAST:event_SelectionSortActionPerformed
-
-    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchTextFieldActionPerformed
-
-    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
-        // TODO add your handling code here:
-         String searchName = searchTextField.getText().trim();
-    if (searchName.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please enter a name to search.");
-        return;
-    }
-
-    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) customersTable.getModel());
-    customersTable.setRowSorter(sorter);
-
-    sorter.setRowFilter(RowFilter.regexFilter("(?i)^" + searchName + "$", 1)); // Match name in column 1 (case-insensitive)
-
-    if (customersTable.getRowCount() == 0) {
-        JOptionPane.showMessageDialog(this, "Customer not found.");
-        sorter.setRowFilter(null); // Reset filter if no match is found
-    }
-    }//GEN-LAST:event_SearchButtonActionPerformed
-
-    private void MergeSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MergeSortActionPerformed
-        // TODO add your handling code here:
-        // Get the table model
-    DefaultTableModel model = (DefaultTableModel) customersTable.getModel();
-
-    // Extract all rows into a list
-    List<Object[]> rows = new ArrayList<>();
-    for (int i = 0; i < model.getRowCount(); i++) {
-        Object[] row = new Object[model.getColumnCount()];
-        for (int j = 0; j < model.getColumnCount(); j++) {
-            row[j] = model.getValueAt(i, j);
-        }
-        rows.add(row);
-    }
-
-    // Perform merge sort on the rows by the Location column (index 4)
-    rows = mergeSort(rows, 4);
-
-    // Clear the table
-    model.setRowCount(0);
-
-    // Add the sorted rows back to the table
-    for (Object[] row : rows) {
-        model.addRow(row);
-    }
-}
-
-// Merge Sort Implementation
-private List<Object[]> mergeSort(List<Object[]> rows, int columnIndex) {
-    if (rows.size() <= 1) {
-        return rows;
-    }
-
-    // Split the list into two halves
-    int mid = rows.size() / 2;
-    List<Object[]> left = new ArrayList<>(rows.subList(0, mid));
-    List<Object[]> right = new ArrayList<>(rows.subList(mid, rows.size()));
-
-    // Recursively sort both halves
-    left = mergeSort(left, columnIndex);
-    right = mergeSort(right, columnIndex);
-
-    // Merge the sorted halves
-    return merge(left, right, columnIndex);
-}
-
-// Merge two sorted lists
-private List<Object[]> merge(List<Object[]> left, List<Object[]> right, int columnIndex) {
-    List<Object[]> merged = new ArrayList<>();
-    int i = 0, j = 0;
-
-    // Compare rows from left and right, and add the smaller one to the merged list
-    while (i < left.size() && j < right.size()) {
-        String leftValue = left.get(i)[columnIndex].toString();
-        String rightValue = right.get(j)[columnIndex].toString();
-
-        if (leftValue.compareToIgnoreCase(rightValue) <= 0) {
-            merged.add(left.get(i));
-            i++;
-        } else {
-            merged.add(right.get(j));
-            j++;
-        }
-    }
-
-    // Add remaining elements from left and right
-    while (i < left.size()) {
-        merged.add(left.get(i));
-        i++;
-    }
-    while (j < right.size()) {
-        merged.add(right.get(j));
-        j++;
-    }
-
-    return merged;
-        
-    }//GEN-LAST:event_MergeSortActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        // Clear all the text fields
-    newCusName.setText("");
-    newCusEmail.setText("");
-    newCusPhone.setText("");
-    newCusLocation.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
 //Method to add values to the table:
     private void populateCustomerTable() {
     DefaultTableModel model = (DefaultTableModel) customersTable.getModel();
@@ -723,17 +456,12 @@ private List<Object[]> merge(List<Object[]> left, List<Object[]> right, int colu
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton HomeBtn;
-    private javax.swing.JButton InsertionSort;
-    private javax.swing.JButton MergeSort;
-    private javax.swing.JButton SearchButton;
-    private javax.swing.JButton SelectionSort;
     private javax.swing.JButton TravelBtn;
     private javax.swing.JButton aboutBtn;
     private javax.swing.JButton addCusBtn;
     private javax.swing.JTable customersTable;
     private javax.swing.JButton deleteCusBtn;
     private javax.swing.JLabel greetingLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -746,7 +474,6 @@ private List<Object[]> merge(List<Object[]> left, List<Object[]> right, int colu
     private javax.swing.JTextField newCusLocation;
     private javax.swing.JTextField newCusName;
     private javax.swing.JTextField newCusPhone;
-    private javax.swing.JTextField searchTextField;
     private javax.swing.JButton updateCusBtn;
     // End of variables declaration//GEN-END:variables
 }
