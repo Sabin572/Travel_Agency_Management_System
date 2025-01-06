@@ -192,14 +192,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel12" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="HomeBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="TravelBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="aboutBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="logoutBtn" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel12" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="HomeBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="TravelBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="aboutBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="36" max="32767" attributes="0"/>

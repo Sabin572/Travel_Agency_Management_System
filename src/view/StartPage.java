@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-package travelwithus.com;
+package view;
 import controller.UserController;
 import javax.swing.*;
 import java.awt.event.ActionEvent;

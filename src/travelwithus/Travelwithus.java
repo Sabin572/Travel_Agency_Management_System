@@ -5,7 +5,7 @@
 package travelwithus;
 
 import controller.UserController;
-import travelwithus.com.StartPage;
+import view.StartPage;
 
 /**
 * @author Sabin Adhikari
